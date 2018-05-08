@@ -1,3 +1,21 @@
+// mnogo bozi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +43,7 @@ System.Console.WriteLine("Napi6i kolko 6e e duljinata na masiva"); int[] masiv;
         int position=0;
         for(int i=1;i<masiv.Length-1;i++)
         {
-            if(min_num>masiv[i])
+        if(min_num>masiv[i])
             {
 
                 min_num=masiv[i];
