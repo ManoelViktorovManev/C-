@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//6 zada4ka ot u4ebnika
 namespace Zadachki
 {
     class Program
@@ -59,3 +59,74 @@ namespace Zadachki
                 //Console.Write("{0}", position);
             } while (true);
                 
+
+
+
+
+
+
+
+
+
+
+
+
+//12 zad dowur6i ya c ,d ! 
+ //purwoto e wertikal a wtoroto horizontal 
+            int a;//vertikal;
+            int b;//horizont;
+            Console.WriteLine("Wuwedi duljinata na matricata");
+            a = int.Parse(System.Console.ReadLine());
+            b = int.Parse(System.Console.ReadLine());
+            int[,] matric = new int[a, b];
+            int boza = 1;
+            for (int i = 0; i < b; i++)
+            {
+                
+                for (int k = 0; k < a; k++)
+                {
+                    matric[i, k] = boza; 
+                    
+                    boza++;
+                }
+                
+
+                //Console.Write("\n\n");
+            }
+            int j = 0;
+            for (int i = 0; i < b; i++)
+            {
+
+
+              j = 0;
+                if (i % 2 == 1)
+                {
+                    for (int k = 0; k < a / 2; k++)
+                    {
+
+
+                        int c = matric[i, k];
+                        matric[i, k] = matric[i, matric.GetLength(0) - 1 - j];
+                        matric[i, matric.GetLength(0) - 1 - j] = c;
+                        j++;
+                    }
+                }
+
+                
+
+
+                
+            }
+            for (int i = 0; i < b; i++)
+            {
+                Console.Write("\n");
+                for (int k = 0; k < a; k++)
+                {
+                    
+                    System.Console.Write("{0}\t", matric[k, i]);
+                   
+                }
+
+
+                //Console.Write("\n\n");
+            }
