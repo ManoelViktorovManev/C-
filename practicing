@@ -71,60 +71,81 @@ namespace Zadachki
 
 
 
-//12 zad dowur6i ya c ,d ! 
- //purwoto e wertikal a wtoroto horizontal 
-            int a;//vertikal;
+//12 zad dowur6i ya d ! 
+             int a;//vertikal;
             int b;//horizont;
+            //4 ; 0 
             Console.WriteLine("Wuwedi duljinata na matricata");
             a = int.Parse(System.Console.ReadLine());
             b = int.Parse(System.Console.ReadLine());
             int[,] matric = new int[a, b];
-            int boza = 1;
-            for (int i = 0; i < b; i++)
+            int boza = 0;
+            int horizont_zapomni = 0;
+            int vertikal_zapomni = -1;
+            int ez = 1;
+            int zapomni = -1;
+            if (b % 2 == 1)
+                ez = 1;
+            for (int i = 0; i < (b / 2)+ez; i++)
             {
-                
+                horizont_zapomni = horizont_zapomni + 1;
+                boza = horizont_zapomni;
+                //3
+                for (int k = a - 1; k >= 0; k--)
+                {
+                    if (vertikal_zapomni == a - 1)
+                        vertikal_zapomni = a - 1;
+                    else
+                    {
+                        vertikal_zapomni++;
+                    }
+                    if (ez==1)
+                    {
+                    if (k == (a / 2) + 1 && i==((b/2)+ez)-1)
+                                            break;
+                    }
+                    
+                    matric[i, k] = boza + (1 * vertikal_zapomni);
+                    
+                    boza = matric[i, k];
+                }
+                zapomni++;
+                vertikal_zapomni = zapomni;
+            }
+
+            vertikal_zapomni = -1;
+            horizont_zapomni = a * b + 1;
+            zapomni = -1;
+            
+            for (int i = b-1; i >= b/2; i--)
+            {
+                horizont_zapomni = horizont_zapomni - 1;
+                boza = horizont_zapomni;
                 for (int k = 0; k < a; k++)
                 {
-                    matric[i, k] = boza; 
-                    
-                    boza++;
-                }
-                
-
-                //Console.Write("\n\n");
-            }
-            int j = 0;
-            for (int i = 0; i < b; i++)
-            {
-
-
-              j = 0;
-                if (i % 2 == 1)
-                {
-                    for (int k = 0; k < a / 2; k++)
+                    if (vertikal_zapomni == a - 1)
+                        vertikal_zapomni = a - 1;
+                    else
                     {
-
-
-                        int c = matric[i, k];
-                        matric[i, k] = matric[i, matric.GetLength(0) - 1 - j];
-                        matric[i, matric.GetLength(0) - 1 - j] = c;
-                        j++;
+                        vertikal_zapomni++;
                     }
+                    matric[i, k] = boza - (1 * vertikal_zapomni);
+                    boza = matric[i, k];
                 }
+                zapomni++;
+                vertikal_zapomni = zapomni;
 
-                
-
-
-                
             }
+            
+
             for (int i = 0; i < b; i++)
             {
                 Console.Write("\n");
                 for (int k = 0; k < a; k++)
                 {
-                    
+
                     System.Console.Write("{0}\t", matric[k, i]);
-                   
+
                 }
 
 
