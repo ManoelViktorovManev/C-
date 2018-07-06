@@ -233,3 +233,45 @@ namespace Zadachki
             {
                 Console.WriteLine("Tujno");
             }
+
+
+
+25 zada4a
+   int chislo;
+            Console.WriteLine("Ima6 da wuwede6 chislo");
+           chislo= int.Parse(Console.ReadLine());
+            bool sre6a_li_se = false;
+            int zapomni = 0;
+            //formula za kombinaciya e n-4isla => ako sa 3 => 1
+            //123 132 213 231 312 321
+            //1234 1243 1324 1342 1423 1432 4123 4132 4213 4231 4312 4321 2134 2143 2314 2341 2413 2431 3124 3142 3214 3241 3421 3412
+            for(int i=1;i<=chislo;i++)
+            {
+              
+                for(int k=1;k<=chislo;k++)
+                {
+                    Console.Write("{0}",i);
+                    if(k==i)
+                        sre6a_li_se = true; 
+                    if(sre6a_li_se==false)
+                    {
+                        zapomni = k;
+                        Console.Write("{0}",k);
+                        for(int j=1;j<=chislo;j++)
+                        {
+                            if(j!=i&&j!=k)
+                            {
+                                Console.Write("{0} ", j);
+
+                            }
+                        }
+                        
+                        
+                    }
+                        
+                    sre6a_li_se = false;
+                    
+                }
+                Console.WriteLine();
+                
+            }
